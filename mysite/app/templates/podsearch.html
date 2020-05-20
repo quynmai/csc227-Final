@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Pod Results :</h1>
+    <form method="POST">
+        Enter the device you wish to search for: <br>
+        <input type="text" name="devices"> <br>
+        <input type="submit" value="Search"> <br>
+        <input type="reset">
+    </form>
+
+    <p>
+        {% for pod in pod_list %}
+            <h3>Pod: {{ pod }}</h3>
+            <h4>Pod Name: {{ pod_dict[pod]['pod_name'] }}</h4>
+            <h4>Devices:</h4>
+            {% for i in (pod_dict[pod]['devices']) %}
+                <div>{{ i }}</div>
+            {% endfor %}
+            <h4>Topology:</h4>
+            <img src="/static/topologies/{{ pod }}-topo.PNG" class="center"></div>
+        {% endfor %}
+    </p>
+    {% endblock %}

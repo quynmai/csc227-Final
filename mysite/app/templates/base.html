@@ -1,0 +1,121 @@
+<html>
+    <style>
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+        body {
+
+  font-size: 10pt;
+
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+  color: black;
+
+  line-height: 14pt;
+
+  padding-left: 5pt;
+
+  padding-right: 5pt;
+
+  padding-top: 5pt;
+
+  text-align: center;
+
+}
+
+
+h1 {
+
+  font: 14pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+  font-weight: bold;
+
+  line-height: 20pt;
+
+  text-align: center;
+}
+
+
+p.subheader {
+
+  font-weight: bold;
+
+  color: #593d87;
+
+  text-align: center;
+
+}
+
+
+img {
+
+  padding: 3pt;
+  max-width: 55%;
+  height: auto;
+  align-content: center;
+}
+
+
+a {
+
+  text-decoration: none;
+  text-align: center;
+
+}
+
+
+a:link, a:visited {
+
+  color: #8094d6;
+  text-align: center;
+
+}
+
+
+a:hover, a:active {
+
+  color: #FF9933;
+  text-align: center;
+}
+
+
+div.footer {
+
+  font-size: 9pt;
+
+  font-style: italic;
+
+  line-height: 12pt;
+
+  text-align: center;
+
+  padding-top: 30pt;
+
+}
+    </style>
+    <head>
+        {% if title %}
+        <title>{{ title }} - CSC Final Search</title>
+        {% else %}
+        <title>CSC Final</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>Autopod Search Tool:
+            <br/>
+            <a href="/index">Home</a>
+            <a href="/podsearch">Search Topologies by Device</a><br/>
+            <a href="/asr">ASR Topologies</a>
+            <a href="/catalyst">Catalyst Topologies</a>
+            <a href="/firepower">Firepower Topologies</a><br/>
+            <a href="/nexus">Nexus Topologies</a>
+            <a href="/alltopos">All Topologies</a><br/>
+        </div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

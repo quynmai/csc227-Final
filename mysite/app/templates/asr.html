@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>List of ASR Pods with Topologies:</h1>
+    <p>
+        {% for pod in pod_list %}
+            <h3>Pod: {{ pod }}</h3>
+            <h4>Pod Name: {{ pod_dict[pod]['pod_name'] }}</h4>
+            <h4>Devices:</h4>
+            {% for i in (pod_dict[pod]['devices']) %}
+                <div>{{ i }}</div>
+            {% endfor %}
+            <h4>Topology:</h4>
+            <img src="/static/topologies/{{ pod }}-topo.PNG"></div>
+        {% endfor %}
+    </p>
+    {% endblock %}
